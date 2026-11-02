@@ -45,6 +45,7 @@ Each line can contain:
 From the repository root:
 
 ```bash
+export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
 python -m vpp2.fca validate-contracts contracts.jsonl
 python -m vpp2.fca evaluate-rollouts --rollouts rollouts.jsonl --output results/fca
 python scripts/evaluate_fca.py --rollouts rollouts.jsonl --output results/fca

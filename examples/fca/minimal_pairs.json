@@ -1,0 +1,19 @@
+[
+  {
+    "scene_id": "cup_box_001",
+    "base": {
+      "instruction": "Put the red cup into the box.",
+      "contract": {
+        "object": "red_cup",
+        "goal": "inside_box",
+        "required_order": ["approach", "grasp", "lift", "place", "release"],
+        "terminal_predicate": "inside(red_cup,box)"
+      }
+    },
+    "variants": [
+      {"name": "left_arm", "changed_atom": "actor", "instruction": "Use the left arm to put the red cup into the box.", "contract": {"actor": "left_arm"}},
+      {"name": "right_arm", "changed_atom": "actor", "instruction": "Use the right arm to put the red cup into the box.", "contract": {"actor": "right_arm"}},
+      {"name": "avoid_blue", "changed_atom": "forbidden", "instruction": "Put the red cup into the box without touching the blue cup.", "contract": {"forbidden": ["touching(blue_cup,red_cup)"]}}
+    ]
+  }
+]

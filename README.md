@@ -118,6 +118,7 @@ complete assets and normalization files:
 - [RoboDojo: training and testing](docs/robodojo.md)
 - [RoboDojo Video-10k training from Stage-2 Video](docs/robodojo.md#train-video-10k)
 - [LIBERO, LIBERO-OOD and LIBERO-PRO](docs/libero.md)
+- [FCA-VPP2 contract alignment experiments](docs/fca_experiments.md)
 
 ## Citation
 

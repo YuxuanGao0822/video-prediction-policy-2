@@ -43,7 +43,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "validate-contracts":
         rows = load_jsonl(args.input)
         for index, row in enumerate(rows):
-            Contract.from_dict(row.get("contract", row))
+            Contract.from_dict(row.get("contract", row)).validate()
         print(json.dumps({"valid": True, "num_contracts": len(rows)}))
         return 0
     if args.command == "evaluate-rollouts":

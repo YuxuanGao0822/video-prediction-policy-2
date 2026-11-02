@@ -1,0 +1,39 @@
+# FCA-VPP2 experiment defaults. Official VPP2 configs remain unchanged.
+contract:
+  terminal_threshold: 0.80
+  violation_threshold: 0.50
+  uncertainty_threshold: 0.45
+controller:
+  mode: selective
+  execute_chunk_steps: 8
+  min_chunk_steps: 1
+  max_replans: 3
+head:
+  input_dim: 1024
+  hidden_dim: 256
+  num_phases: 16
+  num_violations: 1
+  epochs: 5
+  batch_size: 4
+  learning_rate: 0.0003
+  valid_fraction: 0.1
+  seed: 0
+variants:
+  - vpp2_full_instruction
+  - vpp2_subtask_feedback
+  - fca
+  - fca_no_future
+  - fca_no_contract
+metrics:
+  - terminal_success
+  - planner_intent_score
+  - execution_following_score
+  - contract_success
+  - atomic_f1
+  - order_score
+  - temporal_iou
+  - false_advance_rate
+  - violation_rate
+  - recovery_success
+  - prediction_action_consistency
+  - calibration_ece
